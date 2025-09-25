@@ -1,4 +1,3 @@
-export PATH=$PATH:$HOME/.local/bin
 # ─── MacOS Specific ─────────────────────────────────────────────────────────────
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh)"
@@ -26,6 +25,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # ──Oh My Posh ────────────────────────────────
+export PATH=$PATH:$HOME/.local/bin
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.json)"
 
 # ─── Keybindings ───────────────────────────────────────────────────────────────
@@ -57,7 +57,7 @@ alias ls='ls --color'
 
 # ─── fzf Shell Integration ─────────────────────────────────────────────────────
 [ -f ~/.fzf.zsh ] && source ~/.fzf/zsh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # ─── Conda Initialization ──────────────────────────────────────────────────────
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
