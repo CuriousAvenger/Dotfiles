@@ -1,3 +1,6 @@
+# Confirm path for oh-my-posh
+export PATH=$PATH:$HOME/.local/bin
+
 # ─── MacOS Specific ─────────────────────────────────────────────────────────────
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh)"
