@@ -1,6 +1,3 @@
-# Confirm path for oh-my-posh
-export PATH=$PATH:$HOME/.local/bin
-
 # ─── MacOS Specific ─────────────────────────────────────────────────────────────
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh)"
@@ -28,6 +25,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # ──Oh My Posh ────────────────────────────────
+export PATH=$PATH:$HOME/.local/bin
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.json)"
 
 # ─── Keybindings ───────────────────────────────────────────────────────────────
