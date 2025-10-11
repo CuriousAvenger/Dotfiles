@@ -15,7 +15,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
-# ─── Plugins ───────────────────────────────────────────────────────────────────
+# ─── Plugins ─────────────────────────────────────────────────────────────────
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -24,7 +24,7 @@ zinit light Aloxaf/fzf-tab
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
-# ──Oh My Posh ────────────────────────────────
+# ──Oh My Posh ────────────────────────────────────────────────────────────────
 export PATH=$PATH:$HOME/.local/bin
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.json)"
 
@@ -32,7 +32,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.json)"
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# ─── History Settings ──────────────────────────────────────────────────────────
+# ─── History Settings ─────────────────────────────────────────────────────────────
 HISTSIZE=5000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
@@ -54,11 +54,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 alias ls='ls --color'
-# ─── fzf Shell Integration ─────────────────────────────────────────────────────
+# ─── fzf Shell Integration ────────────────────────────────────────────────────────────
 [ -f ~/.fzf.zsh ] && source ~/.fzf/zsh
 eval "$(zoxide init --cmd cd zsh)"
 
-# ─── Conda Initialization ──────────────────────────────────────────────────────
+# ─── Conda Initialization ────────────────────────────────────────────────────────────
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
   eval "$__conda_setup"
@@ -71,7 +71,14 @@ else
 fi
 unset __conda_setup
 
-# ─── NVM Initialization ────────────────────────────────────────────────────────
+# ─── NVM Initialization ─────────────────────────────────────────────────────────────
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+# ─── Astro Related Init ─────────────────────────────────────────────────────────────
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  export LCOSNDIR=$HOME/Documents/Astrophysics/lcogtsnpipe/data
+  export LCOSNDBPATH=$HOME/Documents/Astrophysics/lcogtsnpipe/mysql
+fi
+
