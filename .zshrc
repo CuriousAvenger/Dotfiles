@@ -79,8 +79,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 
 # ─── Astro Related Init ─────────────────────────────────────────────────────────────
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  export LCOSNDIR=$HOME/Documents/Astrophysics/lcogtsnpipe/data
-  export LCOSNDBPATH=$HOME/Documents/Astrophysics/lcogtsnpipe/mysql
-fi
 
+
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
