@@ -5,6 +5,12 @@
       "alignment": "left",
       "segments": [
         {
+          "foreground": "#FFD700",
+          "style": "plain",
+          "template": "{{ if .SSHSession }} ({{ .UserName }}@{{ .HostName }}) {{ end }}",
+          "type": "session"
+        }
+        {
           "foreground": "#C591E8",
           "style": "plain",
           "template": "({{ .Venv }}) ",
